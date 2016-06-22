@@ -355,5 +355,5 @@ gcc -o test test.c
 ```perl
 dmesg | tail -5083
 ```
-![res1](/images/images/linux/res2.png)
+![res1](/images/images/linux/res1.png)
 
