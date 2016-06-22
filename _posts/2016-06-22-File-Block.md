@@ -18,6 +18,7 @@ root@binism-GE60-2OC-2OD-2OE:/home/binism# parted
 ```
 
 ![parted](/images/images/linux/parted.png)
+
 ```perl
 p
 ```
@@ -30,6 +31,7 @@ p
 ## 2.阅读Ext3(或Ext4)文件系统，特别是索引节点相关的源代码
 **这里对```struct inode```和```struct file```进行注释：**
 * 索引节点对象由inode结构体表示，定义文件在linux/fs.h中
+
 ```cpp
 struct inode {
         struct hlist_node       i_hash;              /* 哈希表 */
@@ -80,6 +82,7 @@ struct inode {
 };
 ```
 * struct file结构体定义在include/linux/fs.h中定义
+
 ```cpp
 struct file {
         union {
@@ -140,6 +143,7 @@ atomic_t d_count; //目录项对象使用计数器,可以有未使用态,使用�
 * 要求：为内核添加一个新的系统调用filesys, 其从调用者接收一个磁盘文件的全局路径名，打印该文件占用的所有磁盘块；
 
 [这个例子](https://lists.debian.org/debian-mips/2002/04/msg00059.html)是我在stackoverflows上发现的，它实现了在用户空间对文件磁盘块号的打印。代码如下：
+
 ```cpp
 int main(int argc, char **argv) {
 	int		fd,
@@ -167,6 +171,7 @@ int main(int argc, char **argv) {
 }
 ```
 这段代码使用了函数ioctl()，这个函数并未在内核环境下定义，它相关实现在Linux/fs/ioctl.c中：
+
 ```cpp
 static int file_ioctl(struct file *filp, unsigned int cmd,unsigned long arg)
 {
@@ -207,6 +212,7 @@ static int ioctl_fibmap(struct file *filp, int __user *p)
 我们可以在系统调用的c文件中实现此函数，便可达到获取磁盘号的目的。
 
 * 编写filesys.c文件
+
 ```perl
 vim linux4.2.6/kernel/filesys.c
 ```
@@ -289,12 +295,14 @@ asmlinkage long sys_filesys(const char __user *argv){
 ```
 * 添加系统调用filesys
  * 修改system table
+ 
  ```perl
  cd ./linux-4.2.6/arch/x86/entry/syscalls
  vim syscall_64.tbl
  ```
  ![systable](/images/images/linux/systable.png)
  * 修改系统头文件
+ 
  ```perl
  cd ./linux-4.2.6/include/linux
  vim syscalls.h
@@ -320,6 +328,7 @@ obj-y     = fork.o exec_domain.o panic.o \
 +       filesys.o
 ```
 * 编译安装内核
+
 ```perl
 make -j 4
 make modules_install
@@ -345,6 +354,7 @@ int main(){
 }
 ```
 * 编译生成并运行
+
 ```perl
 gcc -o test test.c
 ./test
