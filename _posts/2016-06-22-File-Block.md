@@ -190,6 +190,7 @@ static int file_ioctl(struct file *filp, unsigned int cmd,unsigned long arg)
 }
 ```
 可以看见获取磁盘号的函数为ioctl_fibmap()，此函数同样定义在Linux/fs/ioctl.c中：
+
 ```cpp
 static int ioctl_fibmap(struct file *filp, int __user *p)
 {
@@ -295,15 +296,15 @@ asmlinkage long sys_filesys(const char __user *argv){
 ```
 * 添加系统调用filesys
  * 修改system table
- 
- ```perl
+
+```perl
  cd ./linux-4.2.6/arch/x86/entry/syscalls
  vim syscall_64.tbl
- ```
+```
  ![systable](/images/images/linux/systable.png)
  * 修改系统头文件
  
- ```perl
+```perl
  cd ./linux-4.2.6/include/linux
  vim syscalls.h
 ```
