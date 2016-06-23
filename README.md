@@ -1,47 +1,51 @@
-### 博客地址
+## BruceZhao's Tech Blog
+ 
+### Hello World!
 
-Github托管的是以前Jekyll版本的源码，现在博客用Hexo重新搭建
-#### 预览
+This is my first Blog on [GitHub](https://github.com), powered by [Jekyll](https://github.com/mojombo/jekyll) and [Jekyll-bootstrap](http://jekyllbootstrap.com), licensed under [(CC) BY-NC-SA 3.0 CN](http://creativecommons.org/licenses/by-nc-sa/3.0/cn) Theme From:[dbyll](http://dbtek.github.io/dbyll/) & [Hux](http://huangxuan.me) .
 
-* Jekyll版本：EZLippi.github.io
-* Hexo 版本： [www.ezlippi.com](http://www.ezlippi.com)
-* Hexo版本源码：[https://coding.net/u/ezlippi/p/ezlippi/git/tree/coding-pages/](https://coding.net/u/ezlippi/p/ezlippi/git/tree/coding-pages/)
+This Blog will be used to record some notes and thoughts about using  [**R**](https://www.r-project.org)  in analysing data.
 
-### 使用Jekyll版本作为博客模板，仅需如下几步：
+### Brief Intro
 
-1. 首先Fork或Download一份本项目代码。 
-2. 修改_config.yaml及about.md文件，以变更个人信息。 
-3. 修改_include目录下相关文件，以配置网站统计(analytics.html)，网友评论(comment.html)，右侧栏目(categories.html),热门文章(hot.html),友情链接(links.html)等。 
-4. 修改CNAME文件，以绑定自己的域名。 
-5. 删除_posts下文章，换成你自己的。 
-6. 去谷歌自定义搜索新建一个你的搜索引擎，把你的Id替换根目录下search.html我的ID
-7. 最后，push到你自己的博客Repo~ 
-
- *^_^*如果愿意，Star本项目一个吧~ 
-
-### 本项目使用了
-
-1. CNZZ的网站统计服务，官网：http://cnzz.com 
-2. 多说的评论功能，官网:http://duoshuo.com/
-
-### 联系方式
-
-联系方式： Email(ouyanglip@gmail.com) 
+My name is Bruce Zhao and my major is Statistics. I use  [**R software**](https://www.r-project.org)  to analyse data, and I want to be a data scientist in the future.
+    
+#### 这个博客将用来记录在使用 **R** 过程中的笔记和感想，欢迎大家与我交流数据分析方面的知识~      
 
 
-### 使用本项目作模板的博客链接
+### 关于主题
+本主题修改自[dbyll](http://dbtek.github.io/dbyll/)和[Hux](http://huangxuan.me).   
+Open source stylish, minimalistic theme for jekyll.  
+License：[MIT](http://opensource.org/licenses/MIT)
 
-* http://www.94geek.com  
-* http://www.haidaoxiaofei.me  
-* http://www.malphi.net  
-* http://happyaround.com  
-* http://tencentlocation.github.io  
-* http://wtaps.github.io 
-* http://maoshu.cc
-* http://x-carto.com/
-* (你的位置)  
+## 修改log
 
-## 2016-02-25更新
+2015-12-26
+* 微信图标
+* 增加about.html页面
+* 主页面 full view: false
+* 增加微博share
+* 手机端contact图标
 
-* 本博客由Jekyl迁移到Hexo,博客地址[ezlippi](www.ezlippi.com),源码托管在了国内的[Coding.net](https://coding.net/u/ezlippi/p/ezlippi/git/tree/coding-pages/)
-* 使用Hexo搭建个人博客具体教程参考[Jekyll迁移到Hexo建立个人博客](http://www.ezlippi.com/blog/2016/02/jekyll-to-hexo.html)
+--------------
+2016-01-04
+
+* 增加site.title
+* weibo share 优化
+* 侧边导航滚动栏
+* 字体 以及代码块优化
+
+--------------
+2016-01-08
+
+改自Hux的博客
+- [x] 增加 tags,archives,categories等页面
+- [x] 页面布局小修改
+- [x] 代码高亮配色方案（RStudio&Jekyll)
+- [x] 多说分享链接修复
+- [ ] 文章页面侧边导航栏
+- [x] 多说分享图片设置
+- [x] change perimalink
+- [x] add back to top.
+- [ ] header.image  note:`background-color: #155799; background-image: linear-gradient(110deg, #155799, #159978);`
+- [ ] r-highlight  add keyword & fix string highlight.
