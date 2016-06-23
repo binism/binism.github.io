@@ -15,7 +15,7 @@ tags:      [security,system]
 取予（take-Grant）保护模型使用有向图的形式来表示系统，称这样的有向图为保护图。
 **节点**
 可以是主体或客体。节点可能是主体或客体的。
-
+$\sum_{i=0}^n i^2 = \frac{(n^2+n)(2n+1)}{6}$
 ![取予模型节点](/images/images/security/take-grant-pic1.png)
 边都标记为从源点到目标节点的权限。权限就是预定义的集合R，R含有两个特殊权限
 ![取予模型特殊边的定义](/images/images/security/take-grant-pic2.png)
