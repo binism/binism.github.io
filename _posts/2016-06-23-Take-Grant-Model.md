@@ -4,6 +4,8 @@ title:     取予（Take-Grant）保护模型
 keywords:  security,system
 category:  security
 tags:      [security,system]
+mathjax:   true
+date:      2016-06-23
 ---
 # 取予（Take-Grant）保护模型
 
