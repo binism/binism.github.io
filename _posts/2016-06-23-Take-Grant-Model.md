@@ -8,7 +8,9 @@ tags:      [security,system]
 # 取予（Take-Grant）保护模型
 
 * 作者：BINISM
+
 * 转载需注明出处
+
 ---
 
 ## 取予模型定义
