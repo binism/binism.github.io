@@ -32,7 +32,11 @@ author: binismwu
 email: binismwu@gmail.com
 github: binism
 
+# MathJax Support
+mathjax: ture
+
 config:
   js_dir:
   img_dir:
   css_dir:
+
