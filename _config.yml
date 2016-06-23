@@ -14,7 +14,6 @@ paginate: 8
 paginate_path: "page:num"
 
 kramdown:
-  input: GFM
   auto_ids: true,
   footnote_nr: 1
   entity_output: as_char
