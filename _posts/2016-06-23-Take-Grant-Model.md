@@ -53,7 +53,7 @@ date:      2016-06-23
 
 ## 权限共享
 **定义:** 设G0是一个保护图，x,y是G0中两个不同实体节点，  $$ \alpha $$  是权限集合R的一个子集。谓词can·share(  $$ \alpha $$  ,x,y，G0)的意义是：
-1. 存在一个保护图的序列G1, G2, ……,Gn， ρi,i=1,……，n, 利用规则ρi可以实现Gi-1 ⊢ * Gi, i=1,……，n；
+1. 存在一个保护图的序列$$ G_1, G_2, ……,G_n， ρ_i,i=1,……，n $$, 利用规则$$ ρ_i $$可以实现$$ G_{i-1} ⊢ * G_i, i=1,……，n $$；
 
 2. Gn中存在包含权限子集  $$ \alpha $$  的x到y的边；
 
@@ -97,10 +97,11 @@ x从v中取得了到y的权限  $$ \alpha $$  。
 > 可以直接证明任何节点所拥有的任何权限都可以被岛屿中的其他节点所共享。
 
 **岛屿之间的权限转移：**
+
 * 一个岛屿中的一个主体可以从另一个岛屿中的节点取得权限；
 * 一个主体可以赋予权限给一个中间主体，而另一个岛屿中的某个主体可以从该主体中取走这个权限。
 
-**定义：** 桥是指二个连接端点主体v0和vn的tg路径，并且与该路径相关联的字串在集合$$ \{ \overset{\to}{t*}, \overset{\to}{t*} \overset{\to}{g} \overset{\gets}{t*},\overset{\to}{t*} \overset{\gets}{g} \overset{\gets}{t*} \} $$中。
+**定义：** 桥是指二个连接端点主体v0和vn的tg路径，并且与该路径相关联的字串在集合$$ \{ \overset{\to}{t}* , \overset{\to}{t}* \overset{\to}{g} \overset{\gets}{t}* ,\overset{\to}{t}* \overset{\gets}{g} \overset{\gets}{t}* \} $$中。
 
 ![](/images/images/security/take-grant-pic17.png)
 
