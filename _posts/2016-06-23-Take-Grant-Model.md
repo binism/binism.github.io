@@ -158,12 +158,12 @@ x从v中取得了到y的权限  $$ \alpha $$  。
    * 对应访问控制矩阵中的行结构。
    * 面向门票的模式，以主体为中心，阐述每个主体能够访问的所有客体及其访问的方式。
    * 例：现代的属性证书
-   ![](/images/images/security/take-grant-pic22.png)
+![](/images/images/security/take-grant-pic22.png)
 2. 访问控制表模式
    * 与访问控制矩阵中的列结构相对应。
    * 以客体为中心，确定能够访问该客体的所有主体的名单集合。
    * 例：Windows 的NTFS的权限管理方式。
-   ![](/images/images/security/take-grant-pic23.png)
+![](/images/images/security/take-grant-pic23.png)
 
 ## 安全性
 1. 访问控制矩阵只是表达了主体与客体的权限关系，这样的关系是否满足管理者的要求？如何进行控制能够继续保持满足管理者的要求？
