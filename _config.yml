@@ -36,10 +36,10 @@ BASE_PATH:
 
 # SNS settings
 
-weibo_username:     BINISM
-facebook_username:     binism
-github_username:    BINISM
-google_username:  binbin Wu
+weibo_username:     BINISMWU
+facebook_username:     binismwu
+github_username:    binism
+google_username:  binismwu
 RSS: feed.xml
 email: binismwu@gmail.com
 
