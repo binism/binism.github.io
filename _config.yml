@@ -9,7 +9,7 @@ highlighter: rouge
 markdown: kramdown
 kramdown:
   input: GFM                       # use Github Flavored Markdown !important
-  
+
 gems: [jekyll-paginate]   #jekyll 3.0.X
 # 国内用多说
 disqus: binism
@@ -52,7 +52,7 @@ anchorjs: true                          # 修改在default.html->footer
 duoshuo_username: binism
 # Share component is depend on Comment so we can NOT use share only.
 duoshuo_share: true                     # set to false if you want to use Comment without Sharing
-url: "http://binism.github.io" 
+url: "http://binism.github.io"
 
 # page Sidebar settings
 sidebar-about-description: "啊。"
@@ -62,7 +62,7 @@ sidebar-avatar: /img/me1.png     # img前面加`/`绝对引用。
 
 # Friends
 friends: [
-	{   
+	{
         title: "binism",
         href: "http://binism.github.io"
 	},{
@@ -73,6 +73,3 @@ friends: [
         href: "http://MrWhoami.github.io"
 	}
 ]
-
-
-
