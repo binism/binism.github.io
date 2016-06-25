@@ -1,6 +1,7 @@
 ---
 layout:    post
 title:     取予（Take-Grant）保护模型
+author:     "BINISM"
 keywords:  security,system
 category:  security
 tags:      [security,system]
