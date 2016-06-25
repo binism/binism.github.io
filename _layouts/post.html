@@ -37,11 +37,11 @@ layout: default
                 col-lg-8 col-lg-offset-2
                 col-md-10 col-md-offset-1
                 post-container">
-				
+
     			{{ content }}
-				
+
 				<p class="text-right">
-				<a href="/">{{ page.author }}</a>
+				<a href="/"> {% if page.author %}{{ page.author }}{% else %}{{ site.author }}{% endif %}</a>
 				<span class="time">
 				/
 				<time>{{ page.date | date:"%Y-%m-%d" }}</time>
@@ -52,39 +52,39 @@ layout: default
 					<strong><em>Published under<a href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/">(CC) BY-NC-SA 3.0 CN</a>.
 					</em></strong>
 				</span>
-				
-					
-				
+
+
+
 				</p>
-	
+
 					<hr>
 					{% unless page.categories == empty %}
 					<ul class="tag_box list-unstyled list-inline">
 					<li><i class="fa fa-folder-open"></i></li>
 					{% assign categories_list = page.categories %}
 					{% if categories_list.first[0] == null %}
-						{% for category in categories_list %} 
+						{% for category in categories_list %}
 							<li><a href="{{ site.BASE_PATH }}/{{ site.categories_path }}#{{ category }}-ref">
 								{{ category | join: "/" }} <span>({{ site.categories[category].size }})</span>
 								{% unless forloop.last %},{% endunless %}
 							</a></li>
 						{% endfor %}
 					{% else %}
-						{% for category in categories_list %} 
+						{% for category in categories_list %}
 							<li><a href="{{ site.BASE_PATH }}/{{ site.categories_path }}#{{ category[0] }}-ref">
 								{{ category[0] | join: "/" }} <span>/{{ category[1].size }})</span>
 							</a></li>
 						{% endfor %}
 					{% endif %}
 					</ul>
-					{% endunless %}  
-			
+					{% endunless %}
+
 					{% unless page.tags == empty %}
 					<ul class="list-inline">
 					<li><i class="fa fa-tags"></i></li>
 					{% assign tags_list = page.tags %}
 					{% if tags_list.first[0] == null %}
-						{% for tag in tags_list %} 
+						{% for tag in tags_list %}
 							<li>
 								<a href="{{ site.BASE_PATH }}/{{ site.tags_path }}#{{ tag }}-ref">
 								{{ tag }} <span>({{ site.tags[tag].size }})</span>
@@ -93,22 +93,22 @@ layout: default
 							</li>
 						{% endfor %}
 					{% else %}
-						{% for tag in tags_list %} 
+						{% for tag in tags_list %}
 							<li>
 								<a href="{{ site.BASE_PATH }}/{{ site.tags_path }}#{{ tag[0] }}-ref">
 									{{ tag[0] }} <span>({{ tag[1].size }})</span>
 									{% unless forloop.last %},{% endunless %}
 								</a>
 							</li>
-						
+
 						{% endfor %}
 					{% endif %}
 					{% assign tags_list = nil %}
 					</ul>
-					{% endunless %}  
-			
+					{% endunless %}
+
 					<hr>
-			
+
 			{% if site.duoshuo_share && site.duoshuo_username %}
                 <!-- 多说 Share start -->
 				<div class="ds-share"
@@ -163,7 +163,7 @@ layout: default
                 </div>
                 <!-- 多说评论框 end -->
                 {% endif %}
-				
+
                 {% if site.disqus %}
                 <!-- disqus 评论框 start -->
                 <div class="comment">
@@ -245,7 +245,7 @@ layout: default
 </script>
 <!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
 <script>
-    async("http://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js",function(){
+    async("//cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js",function(){
         anchors.options.placement = 'left';
         anchors.add('h2,h3');
 		anchors.remove('.subheading');
@@ -271,4 +271,3 @@ layout: default
 <!--page views-->
 <script src="https://cdn1.lncld.net/static/js/av-mini-0.6.10.js"></script>
 <script src="http://jerry-cdn.b0.upaiyun.com/hit-kounter/hit-kounter-lc-0.2.0.js"></script>
-
