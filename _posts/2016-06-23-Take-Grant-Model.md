@@ -8,15 +8,17 @@ tags:      [security,system]
 mathjax:   true
 date:      2016-06-23
 ---
-# 取予（Take-Grant）保护模型
-
-* 作者：BINISM
 
 * 禁止转载
 
 * derived from [Prof.Huang's](http://cs.nju.edu.cn/huanghao/) slides
 
 ---
+## 目录
+{: .no_toc}
+
+* 目录
+{:toc}
 
 ## 取予模型定义
 取予（take-Grant）保护模型是访问控制矩阵模型中的一种，使用有向图的形式来表示系统，称这样的有向图为保护图。

@@ -1,15 +1,20 @@
 ---
 layout:     post
 title:      打印文件所占磁盘块号
-keywords:   FILESYS,SYSCALL 
-category:   linux 
+keywords:   FILESYS,SYSCALL
+category:   linux
+author:     "BINISM"
 tags:		[FILESYS, SYSCALL, linux]
 ---
 
-# 打印文件所占磁盘块号
-* 作者：BINISM
+
 * 转载需注明出处
 
+## 目录
+{: .no_toc}
+
+* 目录
+{:toc}
 
 ## 1. 查看当前系统所使用的文件统的类型及版本号
 
@@ -120,21 +125,21 @@ struct file {
 ```cpp
 struct dentry {
 atomic_t d_count; //目录项对象使用计数器,可以有未使用态,使用态和负状态                                            
-        unsigned int d_flags; //目录项标志 
-        struct inode * d_inode; //与文件名关联的索引节点 
-        struct dentry * d_parent; //父目录的目录项对象 
-        struct list_head d_hash; //散列表表项的指针 
-        struct list_head d_lru; //未使用链表的指针 
-        struct list_head d_child; //父目录中目录项对象的链表的指针 
-        struct list_head d_subdirs; //对目录而言，表示子目录目录项对象的链表 
-        struct list_head d_alias; //相关索引节点（别名）的链表 
-        int d_mounted; //对于安装点而言，表示被安装文件系统根项 
-        struct qstr d_name; //文件名 
-        unsigned long d_time; /* used by d_revalidate */ 
-        struct dentry_operations *d_op; //目录项方法 
-        struct super_block * d_sb; //文件的超级块对象 
-        vunsigned long d_vfs_flags; 
-        void * d_fsdata;  //与文件系统相关的数据 
+        unsigned int d_flags; //目录项标志
+        struct inode * d_inode; //与文件名关联的索引节点
+        struct dentry * d_parent; //父目录的目录项对象
+        struct list_head d_hash; //散列表表项的指针
+        struct list_head d_lru; //未使用链表的指针
+        struct list_head d_child; //父目录中目录项对象的链表的指针
+        struct list_head d_subdirs; //对目录而言，表示子目录目录项对象的链表
+        struct list_head d_alias; //相关索引节点（别名）的链表
+        int d_mounted; //对于安装点而言，表示被安装文件系统根项
+        struct qstr d_name; //文件名
+        unsigned long d_time; /* used by d_revalidate */
+        struct dentry_operations *d_op; //目录项方法
+        struct super_block * d_sb; //文件的超级块对象
+        vunsigned long d_vfs_flags;
+        void * d_fsdata;  //与文件系统相关的数据
         unsigned char d_iname [DNAME_INLINE_LEN];// 存放短文件名
 
 }
@@ -157,7 +162,7 @@ int main(int argc, char **argv) {
 	assert(ioctl(fd, FIGETBSZ, &blocksize) == 0);
 	assert(!fstat(fd, &st));
 	bcount = (st.st_size + blocksize - 1) / blocksize;
-	printf("File: %s Size: %d Blocks: %d Blocksize: %d\n", 
+	printf("File: %s Size: %d Blocks: %d Blocksize: %d\n",
 		argv[1], st.st_size, bcount, blocksize);
 	for(i=0;i < bcount;i++) {
 		block=i;
@@ -279,7 +284,7 @@ asmlinkage long sys_filesys(const char __user *argv){
 	bcount = node->i_blocks; //文件块数,这里的文件块数指的是inode上所有的磁盘块数包含无效的块；
 	blocksize = (1 << node->i_blkbits); //以字节为单位的块大小；
 	unsigned int block;
-	unsigned int bcount2 = (filesize + blocksize - 1) / blocksize;//这里是真正有效的磁盘块数； 
+	unsigned int bcount2 = (filesize + blocksize - 1) / blocksize;//这里是真正有效的磁盘块数；
 	printk("File: %s Size: %d Blocks: %u Blocksize: %d\n", argv, filesize, bcount2, blocksize);
 	for(i = 0; i < bcount2; i++){
         block = i;
@@ -303,12 +308,12 @@ asmlinkage long sys_filesys(const char __user *argv){
 ```
  ![systable](/images/images/linux/systable.png)
  * 修改系统头文件
- 
+
 ```perl
  cd ./linux-4.2.6/include/linux
  vim syscalls.h
 ```
- 在include/linux/syscalls.h文件的最后，#endif之前加入系统调用服务例程filesys; 
+ 在include/linux/syscalls.h文件的最后，#endif之前加入系统调用服务例程filesys;
 ![syscall_h](/images/images/linux/syscalls_h.png)
 * 编辑kernel目录下的Makefile文件
 > linux-4.6.2/kernel/Makefile
@@ -360,11 +365,10 @@ int main(){
 gcc -o test test.c
 ./test
 ```
-* 查看结果 
+* 查看结果
 > 注：prink不会向控制台输出信息，查看printk输出内容可使用dmesg命令查看
 
 ```perl
 dmesg | tail -5083
 ```
 ![res1](/images/images/linux/res1.png)
-
