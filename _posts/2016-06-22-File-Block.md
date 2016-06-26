@@ -30,65 +30,70 @@ p
 ![fs](/images/images/linux/fs.png)
 
 可以看到
-* 我的电脑硬一共有9个分区，它们分别是NTFS、EXT4、格式的。
-* linux系统所占的分区为第八分区，起始位置分别是629GB处和744GB处。总大小为115GB。文件系统版本为EXT4。
+
+ * 我的电脑硬一共有9个分区，它们分别是NTFS、EXT4、格式的。
+ * linux系统所占的分区为第八分区，起始位置分别是629GB处和744GB处。总大小为115GB。文件系统版本为EXT4。
 
 ## 2.阅读Ext3(或Ext4)文件系统，特别是索引节点相关的源代码
-**这里对```struct inode```和```struct file```进行注释：**
-* 索引节点对象由inode结构体表示，定义文件在linux/fs.h中
 
-```cpp
+这里对```struct inode``` 和 ```struct file``` 进行注释：
+
+ * 索引节点对象由inode结构体表示，定义文件在linux/fs.h中
+
+{% highlight cpp %}
 struct inode {
-        struct hlist_node       i_hash;              /* 哈希表 */
-        struct list_head        i_list;              /* 索引节点链表 */
-        struct list_head        i_dentry;            /* 目录项链表 */
-        unsigned long           i_ino;               /* 节点号 */
-        atomic_t                i_count;             /* 引用记数 */
-        umode_t                 i_mode;              /* 访问权限控制 */
-        unsigned int            i_nlink;             /* 硬链接数 */
-        uid_t                   i_uid;               /* 使用者id */
-        gid_t                   i_gid;               /* 使用者id组 */
-        kdev_t                  i_rdev;              /* 实设备标识符 */
-        loff_t                  i_size;              /* 以字节为单位的文件大小 */
-        struct timespec         i_atime;             /* 最后访问时间 */
-        struct timespec         i_mtime;             /* 最后修改(modify)时间 */
-        struct timespec         i_ctime;             /* 最后改变(change)时间 */
-        unsigned int            i_blkbits;           /* 以位为单位的块大小 */
-        unsigned long           i_blksize;           /* 以字节为单位的块大小。
+        struct hlist_node       i_hash;              // 哈希表
+        struct list_head        i_list;              // 索引节点链表
+        struct list_head        i_dentry;            // 目录项链表
+        unsigned long           i_ino;               // 节点号
+        atomic_t                i_count;             // 引用记数
+        umode_t                 i_mode;              // 访问权限控制  
+        unsigned int            i_nlink;             // 硬链接数  
+        uid_t                   i_uid;               // 使用者id  
+        gid_t                   i_gid;               // 使用者id组  
+        kdev_t                  i_rdev;              // 实设备标识符  
+        loff_t                  i_size;              // 以字节为单位的文件大小  
+        struct timespec         i_atime;             // 最后访问时间  
+        struct timespec         i_mtime;             // 最后修改(modify)时间  
+        struct timespec         i_ctime;             // 最后改变(change)时间  
+        unsigned int            i_blkbits;           // 以位为单位的块大小  
+        unsigned long           i_blksize;           // 以字节为单位的块大小。
         在4.2.6中移出了这个变量
-        用 1<<i_blkbit代替*/
-        unsigned long           i_version;           /* 版本号 */
-        unsigned long           i_blocks;            /* 文件的块数 */
-        unsigned short          i_bytes;             /* 使用的字节数 */
-        spinlock_t              i_lock;              /* 自旋锁 */
-        struct rw_semaphore     i_alloc_sem;         /* 索引节点信号量 */
-        struct inode_operations *i_op;               /* 索引节点操作表 */
-        struct file_operations  *i_fop;              /* 默认的索引节点操作 */
-        struct super_block      *i_sb;               /* 相关的超级块 */
-        struct file_lock        *i_flock;            /* 文件锁链表 */
-        struct address_space    *i_mapping;          /* 相关的地址映射 */
-        struct address_space    i_data;              /* 设备地址映射 */
-        struct dquot            *i_dquot[MAXQUOTAS]; /* 节点的磁盘限额 */
-        struct list_head        i_devices;           /* 块设备链表 */
-        struct pipe_inode_info  *i_pipe;             /* 管道信息 */
-        struct block_device     *i_bdev;             /* 块设备驱动 */
-        unsigned long           i_dnotify_mask;      /* 目录通知掩码 */
-        struct dnotify_struct   *i_dnotify;          /* 目录通知 */
-        unsigned long           i_state;             /* 状态标志 */
-        unsigned long           dirtied_when;        /* 首次修改时间 */
-        unsigned int            i_flags;             /* 文件系统标志 */
-        unsigned char           i_sock;              /* 套接字 */
-        atomic_t                i_writecount;        /* 写者记数 */
-        void                    *i_security;         /* 安全模块 */
-        __u32                   i_generation;        /* 索引节点版本号 */
+        用 1<<i_blkbit代替
+        unsigned long           i_version;           // 版本号  
+        unsigned long           i_blocks;            // 文件的块数  
+        unsigned short          i_bytes;             // 使用的字节数  
+        spinlock_t              i_lock;              // 自旋锁  
+        struct rw_semaphore     i_alloc_sem;         // 索引节点信号量  
+        struct inode_operations *i_op;               // 索引节点操作表  
+        struct file_operations  *i_fop;              // 默认的索引节点操作  
+        struct super_block      *i_sb;               // 相关的超级块  
+        struct file_lock        *i_flock;            // 文件锁链表  
+        struct address_space    *i_mapping;          // 相关的地址映射  
+        struct address_space    i_data;              // 设备地址映射  
+        struct dquot            *i_dquot[MAXQUOTAS]; // 节点的磁盘限额  
+        struct list_head        i_devices;           // 块设备链表  
+        struct pipe_inode_info  *i_pipe;             // 管道信息  
+        struct block_device     *i_bdev;             // 块设备驱动  
+        unsigned long           i_dnotify_mask;      // 目录通知掩码  
+        struct dnotify_struct   *i_dnotify;          // 目录通知  
+        unsigned long           i_state;             // 状态标志  
+        unsigned long           dirtied_when;        // 首次修改时间  
+        unsigned int            i_flags;             // 文件系统标志  
+        unsigned char           i_sock;              // 套接字  
+        atomic_t                i_writecount;        // 写者记数  
+        void                    *i_security;         // 安全模块  
+        __u32                   i_generation;        // 索引节点版本号  
         union {
-                void            *generic_ip;         /* 文件特殊信息 */
+                void            *generic_ip;         // 文件特殊信息  
         } u;
 };
-```
+
+{% endhighlight cpp %}
+
 * struct file结构体定义在include/linux/fs.h中定义
 
-```cpp
+{% highlight cpp %}
 struct file {
         union {
              struct list_head fu_list;   //文件对象链表指针linux/include/linux/list.h
@@ -109,20 +114,20 @@ struct file {
         #ifdef CONFIG_SECURITY
              void  *f_security;
         #endif
-        /* needed for tty driver, and maybe others */
+        // needed for tty driver, and maybe others  
         void *private_data;
         #ifdef CONFIG_EPOLL
-        /* Used by fs/eventpoll.c to link all the hooks to this file */
+        // Used by fs/eventpoll.c to link all the hooks to this file  
         struct list_head f_ep_links;
         spinlock_t f_ep_lock;
-       #endif /* #ifdef CONFIG_EPOLL */
+       #endif // #ifdef CONFIG_EPOLL  
        struct address_space *f_mapping;
 };
-```
+{% endhighlight cpp %}
 
-* 结构```struct dentry``` 是目录项
+* 结构 ```struct dentry``` 是目录项
 
-```cpp
+{% highlight cpp %}
 struct dentry {
 atomic_t d_count; //目录项对象使用计数器,可以有未使用态,使用态和负状态                                            
         unsigned int d_flags; //目录项标志
@@ -135,7 +140,7 @@ atomic_t d_count; //目录项对象使用计数器,可以有未使用态,使用�
         struct list_head d_alias; //相关索引节点（别名）的链表
         int d_mounted; //对于安装点而言，表示被安装文件系统根项
         struct qstr d_name; //文件名
-        unsigned long d_time; /* used by d_revalidate */
+        unsigned long d_time; // used by d_revalidate  
         struct dentry_operations *d_op; //目录项方法
         struct super_block * d_sb; //文件的超级块对象
         vunsigned long d_vfs_flags;
@@ -143,13 +148,15 @@ atomic_t d_count; //目录项对象使用计数器,可以有未使用态,使用�
         unsigned char d_iname [DNAME_INLINE_LEN];// 存放短文件名
 
 }
-```
+{% endhighlight cpp %}
+
 ## 3.添加一个打印磁盘块号的系统调用
+
 * 要求：为内核添加一个新的系统调用filesys, 其从调用者接收一个磁盘文件的全局路径名，打印该文件占用的所有磁盘块；
 
 [这个例子](https://lists.debian.org/debian-mips/2002/04/msg00059.html)是我在stackoverflows上发现的，它实现了在用户空间对文件磁盘块号的打印。代码如下：
 
-```cpp
+{% highlight cpp %}
 int main(int argc, char **argv) {
 	int		fd,
 			i,
@@ -174,10 +181,10 @@ int main(int argc, char **argv) {
 	}
 	close(fd);
 }
-```
+{% endhighlight cpp %}
 这段代码使用了函数ioctl()，这个函数并未在内核环境下定义，它相关实现在Linux/fs/ioctl.c中：
 
-```cpp
+{% highlight cpp %}
 static int file_ioctl(struct file *filp, unsigned int cmd,unsigned long arg)
 {
          struct inode *inode = file_inode(filp);
@@ -193,15 +200,16 @@ static int file_ioctl(struct file *filp, unsigned int cmd,unsigned long arg)
          }
          return vfs_ioctl(filp, cmd, arg);
 }
-```
+{% endhighlight cpp %}
+
 可以看见获取磁盘号的函数为ioctl_fibmap()，此函数同样定义在Linux/fs/ioctl.c中：
 
-```cpp
+{% highlight cpp %}
 static int ioctl_fibmap(struct file *filp, int __user *p)
 {
          struct address_space *mapping = filp->f_mapping;
         int res, block;
-        /* do we support this mess? */
+        // do we support this mess?  
        if (!mapping->a_ops->bmap)
                 return -EINVAL;
         if (!capable(CAP_SYS_RAWIO))
@@ -212,7 +220,7 @@ static int ioctl_fibmap(struct file *filp, int __user *p)
          res = mapping->a_ops->bmap(mapping, block);
          return put_user(res, p);
 }
-```
+{% endhighlight cpp %}
 此函数使用的几个宏定义，如```EINVAL``` 、```CAP_SYS_RAWIO``` 、```EPERM```等，
 和使用的函数，如```capable()```、```get_user（）```等， 在内核linux/include下的头文件中均有定义。
 我们可以在系统调用的c文件中实现此函数，便可达到获取磁盘号的目的。
@@ -224,7 +232,7 @@ vim linux4.2.6/kernel/filesys.c
 ```
 > filesys.c
 
-```c
+{% highlight cpp %}
 #include <linux/types.h>
 #include <linux/ioctl.h>
 #include <linux/stat.h>
@@ -244,7 +252,7 @@ vim linux4.2.6/kernel/filesys.c
 static int ioctl_fibmap(struct file *filp, int *p) {
          struct address_space *mapping = filp->f_mapping;
          int res, block;
-         /* do we support this mess? */
+         // do we support this mess?  
          if (!mapping->a_ops->bmap)
                  return -EINVAL;
          if (!capable(CAP_SYS_RAWIO))
@@ -298,7 +306,7 @@ asmlinkage long sys_filesys(const char __user *argv){
 	filp_close(fp,NULL);
 	return 0;
 }
-```
+{% endhighlight cpp %}
 * 添加系统调用filesys
  * 修改system table
 
@@ -342,9 +350,10 @@ make install
 ```
 ## 4.编写用户测试程序，测试filesys系统调用
 * 查看/boot目录下linux3.19.0的映像文件所占磁盘块
+
 > test.c
 
-```c
+{% highlight cpp %}
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
@@ -358,7 +367,7 @@ int main(){
     printf("return of hellosys is: %d\n", ret);
     return -1;
 }
-```
+{% endhighlight cpp %}
 * 编译生成并运行
 
 ```perl
