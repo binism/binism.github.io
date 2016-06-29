@@ -38,7 +38,11 @@ layout: default
                 col-sm-12
                 col-xs-12
                 sidebar-container">
-
+                <!-- Blog Sidebar Widgets Column -->
+                <div class="Search">
+                <!-- Blog Search Well -->
+                {% include search.html %}
+                </div>
                 <!-- Short About -->
                 <section class="visible-md visible-lg">
                     <hr><h5><a href="/about.html">ABOUT ME</a></h5>
@@ -95,10 +99,5 @@ layout: default
                 </ul>
                 {% endif %}
     		</div>
-        <!-- Blog Sidebar Widgets Column -->
-        <div class="Search">
-        <!-- Blog Search Well -->
-        {% include search.html %}
-        </div>
 	</div>
 </div>
