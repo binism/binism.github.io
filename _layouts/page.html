@@ -51,7 +51,7 @@ layout: default
                         {% endif %}
                         <!-- SNS Link -->
                         <ul class="list-inline">
-						
+
                             {% if site.weibo_username %}
 							<li>
 								<a target="_blank" href="http://weibo.com/{{ site.weibo_username }}">
@@ -80,7 +80,7 @@ layout: default
 								</a>
 							</li>
 							{% endif %}
-	
+
                         </ul>
                     </div>
                 </section>
@@ -94,6 +94,11 @@ layout: default
                     {% endfor %}
                 </ul>
                 {% endif %}
+                <!-- Blog Sidebar Widgets Column -->
+                <div class="col-md-4">
+                <!-- Blog Search Well -->
+              	    {% include search.html %}
+              	</div>
     		</div>
 	</div>
 </div>
