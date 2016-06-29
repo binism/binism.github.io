@@ -1,10 +1,14 @@
 ---
-layout:     post
-title:      打印文件所占磁盘块号
-keywords:   FILESYS,SYSCALL
-category:   linux
-author:     "BINISM"
-tags:		[FILESYS, SYSCALL, linux]
+title: "打印文件所占磁盘块号"
+author: "BINISM"
+keywords: FILESYS,SYSCALL
+output: html_document
+layout: post
+tags:
+- FILESYS
+- SYSCALL
+- linux
+category: linux
 ---
 
 

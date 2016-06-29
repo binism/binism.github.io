@@ -136,4 +136,4 @@ s可以写o，当且仅当$$ l_s < l_o $$。且s对o具有自主型写权限。
 | Y | $$ D^T $$ an arbitrary element of  Y  is written  y. | decision sequences |
 | M | $$ \{M_1,M_2, .... , M_c\},c = {(2^5)}^{n·m} $$; an element of M, say M_k,  is an n   × m  matrix with entries from PA; the $$ (i,j)‑entry $$ of $$ M_k $$shows $$ S_i $$'s access attributes relative to $$ 0_j $$ | access matrices |
 | V | $$ P(S × O × A) × M × F $$ an arbitrary element of V is written v. | states |
-| $$ Z=V^T $$ | $$ T = \{1,2,…, n\}, V_T=\{(v_1, …, v_n ) \| ∀i∈T, v_i∈V \} $$, An arbitrary element of  VT is written  z, which is  a state sequence ; The components of a state sequence z are$$ v_t $$, $$ t=1,2,…, n $$, and they are also denoted as $$ z_t $$  ,which is the t-th state in the state sequence, $$ t=1,2,…, n $$。 | state sequences |
+| $$ Z=V^T $$ | $$ T = \{1,2,…, n\}, V_T=\{(v_1, …, v_n ) \| ∀i∈T, v_i∈V \} $$, An arbitrary element of  $$ V_T $$ is written  z, which is  a state sequence ; The components of a state sequence z are$$ v_t $$, $$ t=1,2,…, n $$, and they are also denoted as $$ z_t $$  ,which is the t-th state in the state sequence, $$ t=1,2,…, n $$。 | state sequences |
