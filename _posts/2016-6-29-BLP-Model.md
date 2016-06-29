@@ -95,7 +95,10 @@ s可以写o，当且仅当$$ l_s < l_o $$。且s对o具有自主型写权限。
 
 * 客体的安全等级表示了客体的敏感性，所需的保护等级。
 
-例如： George的安全等级=$$ (TOP SECRET, \{NUC，US\} ) $$。William的安全等级=$$ (SECRET，\{EUR\}) $$文档f.docx的安全等级=$$ (CONFIDENTIAL，\{US\} ) $$。
+
+![](/images/images/security/BLP-pic5.png)
+
+例如： $$ George的安全等级=(TOP SECRET, \{NUC，US\} ) $$。William的安全等级=$$ (SECRET，\{EUR\}) $$文档f.docx的安全等级=$$ (CONFIDENTIAL，\{US\} ) $$。
 
 > 类别基于“需要知道”原则，所以预先假设对类别集合$$ \{EUR\} $$有访问权的人没有必要访问类别$$ \{NUC，US\} $$里元素。因此，即便该主体的安全许可高于客体的安全密级，读访问也应该被拒绝。
 
@@ -112,3 +115,24 @@ s可以写o，当且仅当$$ l_s < l_o $$。且s对o具有自主型写权限。
 ### 基本安全定理
 
 设系统$$ ∑ $$的某一个初始安全状态为$$ σ_0 $$，$$ T $$是状态转换的集合。如果$$ T $$的每个元素都遵守简单安全条件和\*－属性，那么对于每个$$ i ≥ 0 $$，状态$$ σ_i $$都是安全的。
+
+
+## 形式化描述
+
+* 模型的元素
+| 集合 | 元素 | 语义 |
+| :----| :----| :----|
+| S | $$ \{S_1,S_2, .... ,S_n\} $$ | 主体： 进程 |
+| O | $$ \{O_1,O_2, .... ,O_m\} $$ | 客体：数据、文件、程序、设备等。 |
+| C | $$ \{C_1,C_2, ....,C_q\} C1 > C2 >  ....  > Cq $$ 级别：主体的安全许可，客体的敏感级别。 |
+| K | $$ \{K_1,K_2, ....,K_r\} $$ | 类别：访问权限范围。 |
+| A | $$ \{r,w,e,a,c\} $$ | 访问属性:read, write, append, execute, control |
+| RA | $$ \{g,r,c,d\} $$ | 请求元素： g:  get, giver:  release, rescindc:  change, created:  delete |
+| R | $$ S^+ × RA × S^+ × O × X  其中： S^+ = S ∪ \{f\}, X = A  ∪  \{f\} ∪  F; 一个请求的元素记为 R_k $$ | 请求：inputs, commands, requests for access to objects by subjects |
+| D | $$ \{yes, no, error, ?\}D的元素记为D_m $$ | 决定 |
+| F | $$ C^S × C^O × (PK)^S x (PK)^O $$ an arbitrary element of F is written $$ f = (f_1,f_2,f_3,f_4) $$ | classification/need-to-know vectors;f1: subject-classification functionf2: object-classification functionf3: subject-category functionf4: object-category function |
+| X | $$ R^T $$ an arbitrary element of  X  is written  x. | request sequences |
+| Y | $$ D^T $$ an arbitrary element of  Y  is written  y. | decision sequences |
+| M | $$ \{M_1,M_2, .... , M_c},c = {(2^5)}^{n·m}; an element of M, say M_k,  is an n   × m  matrix with entries from PA; the $$ (i,j)‑entry $$ of $$ M_k $$shows $$ S_i $$'s access attributes relative to $$ 0_j $$ | access matrices |
+| V | $$ P(S × O × A) × M × F $$ an arbitrary element of V is written v. | states |
+| $$ Z=V^T $$ | $$ T = \{1,2,…, n\} V_T=\{(v_1, …, v_n ) | ∀i∈T, v_i∈V \} $$, An arbitrary element of  VT is written  z, which is  a state sequence ; The components of a state sequence z are$$ v_t $$, $$ t=1,2,…, n $$, and they are also denoted as $$ z_t $$  ,which is the t-th state in the state sequence, $$ t=1,2,…, n $$。 | state sequences |
