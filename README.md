@@ -1,6 +1,6 @@
 ## BINISM's Personal Blog
 see [BINISM' blog](https://binism.github.io/).
- 
+
 ### Hello World!
 
 This is my first Blog on [GitHub](https://github.com), powered by [Jekyll](https://github.com/mojombo/jekyll) and [Jekyll-bootstrap](http://jekyllbootstrap.com), licensed under [(CC) BY-NC-SA 3.0 CN](http://creativecommons.org/licenses/by-nc-sa/3.0/cn) Theme From:[dbyll](http://dbtek.github.io/dbyll/) & [Hux](http://huangxuan.me) .
@@ -26,3 +26,10 @@ Following Changes is made by [BruceZhao](https://github.com/BruceZhaoR).
 - [x] add back to top.
 - [ ] header.image  note:`background-color: #155799; background-image: linear-gradient(110deg, #155799, #159978);`
 - [ ] r-highlight  add keyword & fix string highlight.
+
+------------
+Following Changes is made by [binism](https://github.com/binism).
+2016-06-29
+
+- [x] 添加搜索功能 -- 根据EZLippi的[Blog](http://EZLippi.github.io)
+- [x] 增加search.html以及include/search.html.
