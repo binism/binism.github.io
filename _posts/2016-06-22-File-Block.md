@@ -1,14 +1,10 @@
 ---
-title: "打印文件所占磁盘块号"
-author: "BINISM"
-keywords: FILESYS,SYSCALL
-output: html_document
-layout: post
-tags:
-- FILESYS
-- SYSCALL
-- linux
-category: linux
+layout:     post
+title:      打印文件所占磁盘块号
+keywords:   FILESYS,SYSCALL
+category:   linux
+author:     "BINISM"
+tags:		[FILESYS, SYSCALL, linux]
 ---
 
 
@@ -26,12 +22,12 @@ category: linux
 root@binism-GE60-2OC-2OD-2OE:/home/binism# parted
 ```
 
-![parted](/images/images/linux/parted.png)
+![parted](../images/images/linux/parted.png)
 
 ```perl
 p
 ```
-![fs](/images/images/linux/fs.png)
+![fs](../images/images/linux/fs.png)
 
 可以看到
 
@@ -315,18 +311,18 @@ asmlinkage long sys_filesys(const char __user *argv){
  * 修改system table
 
 ```perl
- cd ./linux-4.2.6/arch/x86/entry/syscalls
+ cd ../linux-4.2.6/arch/x86/entry/syscalls
  vim syscall_64.tbl
 ```
- ![systable](/images/images/linux/systable.png)
+ ![systable](../images/images/linux/systable.png)
  * 修改系统头文件
 
 ```perl
- cd ./linux-4.2.6/include/linux
+ cd ../linux-4.2.6/include/linux
  vim syscalls.h
 ```
  在include/linux/syscalls.h文件的最后，#endif之前加入系统调用服务例程filesys;
-![syscall_h](/images/images/linux/syscalls_h.png)
+![syscall_h](../images/images/linux/syscalls_h.png)
 * 编辑kernel目录下的Makefile文件
 > linux-4.6.2/kernel/Makefile
 
@@ -376,7 +372,7 @@ int main(){
 
 ```perl
 gcc -o test test.c
-./test
+../test
 ```
 * 查看结果
 > 注：prink不会向控制台输出信息，查看printk输出内容可使用dmesg命令查看
@@ -384,4 +380,4 @@ gcc -o test test.c
 ```perl
 dmesg | tail -5083
 ```
-![res1](/images/images/linux/res1.png)
+![res1](../images/images/linux/res1.png)
