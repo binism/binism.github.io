@@ -147,6 +147,7 @@ author:     "BINISM"
 ### 9. Write a code fragment that puts the binary representation of a positive integer N into a String s.
 
   ans:Java has a built-in method Integer.toBinaryString(N)for this job, but the point of the exercise is to see how such a method might be implemented. Here is a particularly concise solution:
+
 ```java
   String s = "";
   for (int n = N; n > 0; n /= 2)
@@ -154,6 +155,7 @@ author:     "BINISM"
 ```
 
 ### 10. What is wrong with the following code fragment?
+
 ```java
    int[] a;
    for (int i = 0; i < 10; i++)
@@ -167,6 +169,7 @@ author:     "BINISM"
    ans:~
 
 ### 12. **What does the following code fragment print?**
+
 ```java
    int[] a = new int[10];
    for (int i = 0; i < 10; i++)
@@ -182,6 +185,7 @@ author:     "BINISM"
 ### 13. Write a code fragment to print the     transposition(rows and columns changed) of a two-dimensional array with M rows and N columns.
 
    ans:
+ 
 ```java
    for(int i = 0; i < N; i++) {
       for(int j = 0; j < M; j++)
@@ -193,6 +197,7 @@ author:     "BINISM"
 ### 14. Write a static method lg()that takes an int value N as argument and returns the largest int not larger than the base-2 logarithm of N. Do notuse Math.
 
    ans:
+
 ```java
    if(N == 0)
       exit(-1);
