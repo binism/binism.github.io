@@ -9,9 +9,19 @@ date:      2016-07-04
 author:     "BINISM"
 ---
 
-# Fundamentals
+---
 
-## Basic Programming Model
+## 目录
+{: .no_toc}
+
+* 目录
+{:toc}
+
+---
+
+
+
+## Fundamentals - Basic Programming Model
 
 ### 1. Give the value of each of the following expressions
 
@@ -56,26 +66,26 @@ author:     "BINISM"
     }
 ```
 
-### 4. What (if anything) is wrong with each of the following statements?
+#### 4. What (if anything) is wrong with each of the following statements?
 
-    a.   if (a > b) then c = 0;
+a.   if (a > b) then c = 0;
 
-    b.   if a > b { c = 0; }
+b.   if a > b { c = 0; }
 
-    c.   if (a > b) c = 0;
+c.   if (a > b) c = 0;
 
-    d.   if (a > b) c = 0 else b = 0;
+d.   if (a > b) c = 0 else b = 0;
 
-    ans:
-
+ans:
     a. delete then;
-    b. (a>b);
+    b:b. (a>b);
     c. right;
     d. right;
 
 ### 5. Write a code fragment that prints true if the double variables x and y are both strictly between 0 and 1and false otherwise.
 
-   ans:
+ans:
+
 ```java
    if( x > 0 && x <　1 && y > 0 && y <　1)
      System.out.println("true");
@@ -100,22 +110,28 @@ author:     "BINISM"
 
 ### 7.  Give the value printed by each of the following code fragments:
 
-  a.
+a.
+
 ```java
   double t = 9.0;
   while (Math.abs(t - 9.0/t) > .001)
       t = (9.0/t + t) / 2.0;
   StdOut.printf("%.5f\n", t);
 ```
-  b.
+
+b.
+
 ```java
   int sum = 0;
   for (int i = 1; i < 1000; i++)
       for (int j = 0; j < i; j++)
           sum++;
   StdOut.println(sum);
+
 ```
-  c.
+
+c.
+
 ```java
   int sum = 0;
   for (int i = 1; i < 1000; i *= 2)
@@ -162,7 +178,7 @@ author:     "BINISM"
       a[i] = i * i;
 ```
 
-    ans:  It  does  not  allocate  memory  for a[] with new.  This  code  results  in  a variable a might not have been initialized compile-time error.
+ans:  It  does  not  allocate  memory  for a[] with new.  This  code  results  in  a variable a might not have been initialized compile-time error.
 
 ### 11. Write a code fragment that prints the contents of a two-dimensional boolean array, using \* to represent trueand a space to represent false. Include row and column numbers.
 
@@ -185,7 +201,7 @@ author:     "BINISM"
 ### 13. Write a code fragment to print the     transposition(rows and columns changed) of a two-dimensional array with M rows and N columns.
 
    ans:
- 
+
 ```java
    for(int i = 0; i < N; i++) {
       for(int j = 0; j < M; j++)
@@ -196,17 +212,17 @@ author:     "BINISM"
 
 ### 14. Write a static method lg()that takes an int value N as argument and returns the largest int not larger than the base-2 logarithm of N. Do notuse Math.
 
-   ans:
+ans:
 
 ```java
    if(N == 0)
       exit(-1);
    int i = 1,ans = 0;
    while(i < N){
-     i >> 1;
+    i =  i * 2;
      ans++;
    }
    return ans-1;
 ```
 
-### 15. Write a static method histogram()that takes an array a[] of intvalues and an integer M as arguments and returns an array of length M whose ith entry is the number of times the integer iappeared in the argument array. If the values in a[] are all between 0 and M–1,  the  sum  of  the  values  in  the  returned  array  should  be  equal  to a.length.
+### 15. Write a static method histogram() that takes an array a[] of int values and an integer M as arguments and returns an array of length M whose ith entry is the number of times the integer i appeared in the argument array. If the values in a[] are all between 0 and M–1,  the  sum  of  the  values  in  the  returned  array  should  be  equal  to a.length.
