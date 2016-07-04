@@ -76,16 +76,16 @@ ans:
 5. Write a code fragment that prints true if the double variables x and y are both strictly between 0 and 1and false otherwise.
 
    ans:
-   ```java
+```java
    if( x > 0 && x <　1 && y > 0 && y <　1)
      System.out.println("true");
    else
      System.out.print("false");
-   ```
+```
 
 6. What does the following program print?
 
-  ```java
+```java
   int f = 0;
   int g = 1;
   for (int i = 0; i <= 15; i++)
@@ -94,35 +94,35 @@ ans:
     f = f + g;
     g = f - g;
   }
-  ```
+```
 
   ans：0 1 1 2 3 5 8 13 21 34 55 89 144 233 377 610
 
 7.  Give the value printed by each of the following code fragments:
 
   a.
-  ```java
+```java
   double t = 9.0;
   while (Math.abs(t - 9.0/t) > .001)
       t = (9.0/t + t) / 2.0;
   StdOut.printf("%.5f\n", t);
-  ```
+```
   b.
-  ```java
+```java
   int sum = 0;
   for (int i = 1; i < 1000; i++)
       for (int j = 0; j < i; j++)
           sum++;
   StdOut.println(sum);
-  ```
+```
   c.
-  ```java
+```java
   int sum = 0;
   for (int i = 1; i < 1000; i *= 2)
       for (int j = 0; j < 1000; j++)
           sum++;
   StdOut.println(sum);
-  ```
+```
 
   ans:
   a. 3.00009
@@ -147,18 +147,18 @@ ans:
 9. Write a code fragment that puts the binary representation of a positive integer N into a String s.
 
   ans:Java has a built-in method Integer.toBinaryString(N)for this job, but the point of the exercise is to see how such a method might be implemented. Here is a particularly concise solution:
-  ```java
+```java
   String s = "";
   for (int n = N; n > 0; n /= 2)
     s = (n % 2) + s;
-  ```
+```
 
 10. What is wrong with the following code fragment?
-   ```java
+ ```java
    int[] a;
    for (int i = 0; i < 10; i++)
       a[i] = i * i;
-  ```
+```
 
     ans:  It  does  not  allocate  memory  for a[] with new.  This  code  results  in  a variable a might not have been initialized compile-time error.
 
@@ -167,7 +167,7 @@ ans:
    ans:~
 
 12. **What does the following code fragment print?**
-   ```java
+ ```java
    int[] a = new int[10];
    for (int i = 0; i < 10; i++)
       a[i] = 9 - i;
@@ -175,25 +175,25 @@ ans:
       a[i] = a[a[i]];
    for (int i = 0; i < 10; i++)
       System.out.println(a[i]);
-   ```
+ ```
 
    ans: 0 1 2 3 4 4 3 2 1 0 (not 0 1 2 3 4 5 6 7 8 9)
 
 13. Write a code fragment to print the     transposition(rows and columns changed) of a two-dimensional array with M rows and N columns.
 
    ans:
-   ```java
+ ```java
    for(int i = 0; i < N; i++) {
       for(int j = 0; j < M; j++)
         System.out.print(A[j][i]);
       System.out.print("\n");
     }
-    ```
+  ```
 
 14. Write a static method lg()that takes an int value N as argument and returns the largest int not larger than the base-2 logarithm of N. Do notuse Math.
 
    ans:
-   ```java
+ ```java
    if(N == 0)
       exit(-1);
    int i = 1,ans = 0;
@@ -202,6 +202,6 @@ ans:
      ans++;
    }
    return ans-1;
-   ```
+ ```
 
 15. Write a static methodhistogram()that takes an array a[] of intvalues and an integer M as arguments and returns an array of length M whose ith entry is the number of times the integer iappeared in the argument array. If the values in a[] are all between 0 and M–1,  the  sum  of  the  values  in  the  returned  array  should  be  equal  to a.length.
