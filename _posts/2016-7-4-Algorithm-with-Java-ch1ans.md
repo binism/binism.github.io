@@ -41,7 +41,7 @@ author:     "BINISM"
    d. string "33"
 
 3. Write a program that takes three integer command-line arguments and prints equalif all three are equal, and not equalotherwise.
-ans:
+   ans:
 
 ```java
    public static void main(String[] args) {
