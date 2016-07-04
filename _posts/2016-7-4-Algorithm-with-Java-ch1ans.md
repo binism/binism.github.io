@@ -154,7 +154,7 @@ ans:
 ```
 
 10. What is wrong with the following code fragment?
- ```java
+```java
    int[] a;
    for (int i = 0; i < 10; i++)
       a[i] = i * i;
@@ -167,7 +167,7 @@ ans:
    ans:~
 
 12. **What does the following code fragment print?**
- ```java
+```java
    int[] a = new int[10];
    for (int i = 0; i < 10; i++)
       a[i] = 9 - i;
@@ -175,25 +175,25 @@ ans:
       a[i] = a[a[i]];
    for (int i = 0; i < 10; i++)
       System.out.println(a[i]);
- ```
+```
 
    ans: 0 1 2 3 4 4 3 2 1 0 (not 0 1 2 3 4 5 6 7 8 9)
 
 13. Write a code fragment to print the     transposition(rows and columns changed) of a two-dimensional array with M rows and N columns.
 
    ans:
- ```java
+```java
    for(int i = 0; i < N; i++) {
       for(int j = 0; j < M; j++)
         System.out.print(A[j][i]);
       System.out.print("\n");
     }
-  ```
+```
 
 14. Write a static method lg()that takes an int value N as argument and returns the largest int not larger than the base-2 logarithm of N. Do notuse Math.
 
    ans:
- ```java
+```java
    if(N == 0)
       exit(-1);
    int i = 1,ans = 0;
@@ -202,6 +202,6 @@ ans:
      ans++;
    }
    return ans-1;
- ```
+```
 
 15. Write a static methodhistogram()that takes an array a[] of intvalues and an integer M as arguments and returns an array of length M whose ith entry is the number of times the integer iappeared in the argument array. If the values in a[] are all between 0 and M–1,  the  sum  of  the  values  in  the  returned  array  should  be  equal  to a.length.
