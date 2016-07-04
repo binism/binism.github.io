@@ -10,14 +10,16 @@ author:     "BINISM"
 ---
 
 # Fundamentals
+
 ## Basic Programming Model
+
 1. Give the value of each of the following expressions
 
    a.  ( 0 + 15 ) / 2
 
    b.  2.0e-6 * 100000000.1
 
-   c.   true && false || true && true
+   c.   true && false \|\| true && true
 
    ans:
    a. 7   b. 200.0000002 c. true;
