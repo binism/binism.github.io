@@ -41,10 +41,9 @@ author:     "BINISM"
    d. string "33"
 
 3. Write a program that takes three integer command-line arguments and prints equalif all three are equal, and not equalotherwise.
+ans:
 
-   ans:
-
-   ```java
+```java
    public static void main(String[] args) {
         int arg1 = Integer.parseInt(args[0]);
         int arg2 = Integer.parseInt(args[1]);
@@ -55,7 +54,7 @@ author:     "BINISM"
             System.out.println("not equel");
         return;
     }
-    ```
+```
 
 4. What (if anything) is wrong with each of the following statements?
 
