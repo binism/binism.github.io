@@ -226,3 +226,125 @@ ans:
 ```
 
 ### 15. Write a static method histogram() that takes an array a[] of int values and an integer M as arguments and returns an array of length M whose ith entry is the number of times the integer i appeared in the argument array. If the values in a[] are all between 0 and M–1,  the  sum  of  the  values  in  the  returned  array  should  be  equal  to a.length.
+
+ans:
+
+```java
+public static int [] histogram(int [] A, int N) {
+        int []ans = new int[N];
+        for(int i = 0; i < A.length; i++){
+            int  index= A[i];
+            if(index < N && index >= 0)
+                ans[index] ++;
+        }
+        return ans;
+    };
+```
+
+### 16. Give the value of exR1(6):
+
+```java
+public static String exR1(int n)
+{
+  if (n <= 0) return "";
+  return exR1(n-3) + n + exR1(n-2) + n;
+}
+```
+ans: 311361142246
+
+### 17. Criticize the following recursive function:
+
+```java
+public static String exR2(int n)
+{
+  String s = exR2(n-3) + n + exR2(n-2) + n;
+  if (n <= 0) return "";
+  return s;
+}
+```
+
+ans:The base case will never be reached. A call to exR2(3) will result in calls to exR2(0), exR2(-3), exR3(-6), and so forth until a Stack Overflow Error occurs.
+
+### 18. Consider the following recursive function:
+
+```java
+public static int mystery(int a, int b)
+{
+  if (b == 0) return 0;
+  if (b % 2 == 0) return mystery(a+a, b/2);
+  return mystery(a+a, b/2) + a;
+}
+```
+
+What are the values of mystery(2, 25)and mystery(3, 11)? Given positive integers
+aand b, describe what value mystery(a, b)computes. Answer the same question, but replace the three + operators with * and replace return 0 with return 1.
+
+ans: mystery(2, 25) = 50,  mystery(3, 11)= 33;  33554432, 177147;
+
+### 19. Run the following program on your computer:
+
+```java
+public class Fibonacci {
+    public static long F(int N) {
+        if (N == 0) return 0;
+        if (N == 1) return 1;
+        return F(N-1) + F(N-2);
+}
+public static void main(String[] args)
+{
+    for (int N = 0; N < 100; N++)
+        StdOut.println(N + " " + F(N));
+}
+```
+
+What is the largest value of N for which this program takes less than 1 hour to compute the value of F(N)? Develop a better implementation of F(N)that saves computed values in an array.
+
+
+ans:
+
+```java
+public class Fibonacci{
+
+    public static long F(int N){
+        if (N == 0) return 0;
+        if (N == 1) return 1;
+
+        long[] f = new long[N+1];
+        f[0] = 0;
+        f[1] = 1;
+
+        for (int i = 2; i <= N; i++{
+            f[i] = f[i-1] + f[i-2];
+
+        }
+        return f[N];
+    }
+
+    public static void main(String[] args)
+    {
+        for (int N = 0; N < 100; N++)
+            StdOut.println(N + " " + F(N));
+    }
+}
+```
+
+### 20.Write a recursive static method that computes the value of ln (N !).
+
+ans:
+
+```Java
+public class Calln {
+
+    private static double lnPro(int N){
+        if (N == 1) return 0;
+        if (N == 2) return 1;
+
+        return Math.log(N) + lnPro(N-1);
+    }
+    public static void main(String[] args){
+        int N = Integer.parseInt(args[0]);
+        double value = lnPro(N);
+        StdOut.print(value);
+    }
+}
+```
