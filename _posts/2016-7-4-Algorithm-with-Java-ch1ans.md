@@ -332,7 +332,7 @@ public class Fibonacci{
 
 ans:
 
-```Java
+```java
 public class Calln {
 
     private static double lnPro(int N){
