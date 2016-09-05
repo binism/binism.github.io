@@ -8,6 +8,7 @@ tags:      [math,probability]
 mathjax:   true
 date:      2016-09-05
 author:     "BINISM"
+header-img:  /images/pages/probability.jpg	
 ---
 
 ---
