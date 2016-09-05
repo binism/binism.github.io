@@ -22,12 +22,12 @@ tags:		[FILESYS, SYSCALL, linux]
 root@binism-GE60-2OC-2OD-2OE:/home/binism# parted
 ```
 
-![parted](../images/images/linux/parted.png)
+![parted](/images/images/linux/parted.png)
 
 ```perl
 p
 ```
-![fs](../images/images/linux/fs.png)
+![fs](/images/images/linux/fs.png)
 
 可以看到
 
@@ -380,4 +380,4 @@ gcc -o test test.c
 ```perl
 dmesg | tail -5083
 ```
-![res1](../images/images/linux/res1.png)
+![res1](/images/images/linux/res1.png)
