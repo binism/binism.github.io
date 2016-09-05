@@ -68,4 +68,4 @@ author:     "BINISM"
 
 我们用下图直观地表示事件间的关系和运算。矩形表示样本空间E，圆表示事件。（图片来源：[http://liyuans.net/](http://liyuans.net/%E9%9B%86%E5%90%88%E7%9F%A5%E8%AF%86%E7%B3%BB%E5%88%97%E4%BA%8C%EF%BC%9A%E9%9B%86%E5%90%88%E7%9A%84%E8%BF%90%E7%AE%97%E5%8F%8A%E6%96%87%E6%B0%8F%E5%9B%BE/)侵删。
 
-![](../images/images/math/set.jpg)
+![](/images/images/math/set.jpg)
