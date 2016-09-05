@@ -1,9 +1,9 @@
 ---
 layout:    post
 title:     概率论笔记
-keywords:  math
-category:  math,Probability
-tags:      [math,Probability]
+keywords:  math,probability
+category:  probability theory
+tags:      [math,probability]
 mathjax:   true
 date:      2016-09-05
 author:     "BINISM"
