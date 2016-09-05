@@ -73,7 +73,7 @@ author:     "BINISM"
 
 事件的运算满足以下规则：
 
-  1. **交换律**：  $$ A \cup B = B \cup A; A \cap B = B \cap A;
+  1. **交换律**：  $$ A \cup B = B \cup A; A \cap B = B \cap A; $$
   2. **结合律**：  $$ (A \cup B) \cup C = A \cup (B \cup C);  (A \cap B) \cap C = A \cap (B \cap C); $$
-  3. **分配律**：  $$ A \cup (B \cap C) = (A \cup B) \cap (A \cup C);  A \cap (B \cup C) = (A \cap B) \cup (A \cap C);
-  4. **De Morgen律（对偶）**：   \overline(A \cup B) = \overline(A) \cap \overline(B);  \overline(A \cap B) = \overline(A) \cup \overline(B);
+  3. **分配律**：  $$ A \cup (B \cap C) = (A \cup B) \cap (A \cup C);  A \cap (B \cup C) = (A \cap B) \cup (A \cap C); $$
+  4. **De Morgen律（对偶）**：   \overline(A \cup B) = \overline(A) \cap \overline(B);  \overline(A \cap B) = \overline(A) \cup \overline(B); $$
