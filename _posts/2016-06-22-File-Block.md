@@ -314,7 +314,7 @@ asmlinkage long sys_filesys(const char __user *argv){
  cd ../linux-4.2.6/arch/x86/entry/syscalls
  vim syscall_64.tbl
 ```
- ![systable](../images/images/linux/systable.png)
+ ![systable](/images/images/linux/systable.png)
  * 修改系统头文件
 
 ```perl
@@ -322,7 +322,7 @@ asmlinkage long sys_filesys(const char __user *argv){
  vim syscalls.h
 ```
  在include/linux/syscalls.h文件的最后，#endif之前加入系统调用服务例程filesys;
-![syscall_h](../images/images/linux/syscalls_h.png)
+![syscall_h](/images/images/linux/syscalls_h.png)
 * 编辑kernel目录下的Makefile文件
 > linux-4.6.2/kernel/Makefile
 
