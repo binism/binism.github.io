@@ -8,7 +8,7 @@ tags:      [math,probability]
 mathjax:   true
 date:      2016-09-05
 author:     "BINISM"
-header-img:  /images/pages/probability.jpg	
+header-img:  /images/pages/probability.jpg
 ---
 
 ---
@@ -28,7 +28,7 @@ header-img:  /images/pages/probability.jpg
 
 ---
 
-## 随机事件和概率
+## 随机事件及其运算
 
 ### 随机试验和随机事件
 
