@@ -36,7 +36,7 @@ header-img:  /images/pages/probability.jpg
 
 首先来考虑一类最简单的随机现象，它具有以下特点：
 
-  1. 它的基本事件为有限个，设为$$ {\omega}_1,....,{\omega}_n $$，则$$ \Omega = \{ {\omega}_1,....,{\omega}_n \}; $$
+  1. 它的基本事件为有限个，设为$$ {\omega}_1,....,{\omega}_n $$，则$$ \Omega = \{ \omega_1,....,\omega_n \}; $$
 
   2. 每个基本事件的出现是等可能的。
 
@@ -51,11 +51,11 @@ header-img:  /images/pages/probability.jpg
 ### 古典概率的性质
 
 对于古典概型而言，其样本空间$$ \Omega = \{ \omega_1,....,\omega_n \} $$是个必然事件，它发生的可能性为1。又由于每个事件$$ \omega_i $$发生的可能性相同，都为$$ \frac{1}{n} $$。即：
-\\[ P(\{{\omega}_1\}) =  P(\{ \omega_2 \}) = .... =P(\{ \omega_n \}) = \frac{1}{n}, \\}
+\\[ P(\{ \omega_1 \}) =  P(\{ \omega_2 \}) = .... =P(\{ \omega_n \}) = \frac{1}{n}, \\}
 有因事件A含m个基本事件，不妨设：
 \\[ A = {\omega}_{i_1},....,{\omega}_{i_n} \\]
 则：
-\\[ P(A) = P(\{{\omega}_{i_1}\}) +  P(\{{\omega}_{i_2}\}) + .... + P(\{{\omega}_{i_m}\}) = \frac{1}{n} + \frac{1}{n} + \frac{1}{n} + .... = \frac{m}{n} \\]
+\\[ P(A) = P(\{ \omega_{i_1}\}) +  P(\{ \omega_{i_2}\}) + .... + P(\{ \omega_{i_m}\}) = \frac{1}{n} + \frac{1}{n} + \frac{1}{n} + .... = \frac{m}{n} \\]
 这就得到了古典概率的定义公式。由该定义公式，不难得到古典概率的基本性质：
 
   1. 对于任意事件A，$$ 0 \le P(A) \le 1 $$。
