@@ -12,3 +12,5 @@ $$ O \Join C $$
 $$ \delta_{aid = 'a001'}(O \Join C) $$
 
 $$ C - \pi_{cid, cname, city, discnt}(\delta_{aid = 'a001'}(O \Join C)) $$
+
+$$ \pi_{cname}(C - \pi_{cid, cname, city, discnt}(\delta_{aid = 'a001'}(O \Join C)) $$
