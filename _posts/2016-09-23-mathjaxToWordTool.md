@@ -8,3 +8,5 @@ header-img:  /images/pages/probability.jpg
 ---
 
 $$ O \Join C $$
+
+$$ \delta_{aid = 'a001'}(O \Join C) $$
