@@ -16,3 +16,5 @@ $$ C - \pi_{cid, cname, city, discnt}(\delta_{aid = 'a001'}(O \Join C)) $$
 $$ \pi_{cname}(C - \pi_{cid, cname, city, discnt}(\delta_{aid = 'a001'}(O \Join C)) $$
 
 $$ \pi_{cid}(\delta_{city = '南京'}(C)) $$
+
+$$ \pi_{cid,sid}(O) \div \pi_{cid}(\delta_{city = '南京'}(C)) $$
