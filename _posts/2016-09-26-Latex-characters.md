@@ -7,7 +7,7 @@ tags:      [math,Latex]
 mathjax:   false
 date:      2016-09-26
 author:     "BINISM"
-header-img:  /images/pages/latex.jpg
+header-img:  /images/pages/latex.jpeg
 ---
 
 * derived from [《一份不太简短的LATEX2介绍》](http://202.119.32.195/cache/11/03/mohu.org/f3291826c25bf24a8af757e142c92b39/lshort-cn.pdf)
