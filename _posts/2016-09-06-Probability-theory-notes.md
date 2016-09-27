@@ -1,7 +1,7 @@
 ---
 layout:    post
-title:     概率论笔记 1.2
-subtitle:  古典概率
+title:     古典概率
+subtitle:  概率论笔记 1.2
 keywords:  math,probability
 category:  probability theory
 tags:      [math,probability]

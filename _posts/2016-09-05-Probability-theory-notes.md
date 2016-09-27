@@ -1,7 +1,7 @@
 ---
 layout:    post
-title:     概率论笔记 1.1
-subtitle:  随机事件及其运算
+title:     随机事件及其运算
+subtitle:  概率论笔记 1.1
 keywords:  math,probability
 category:  probability theory
 tags:      [math,probability]

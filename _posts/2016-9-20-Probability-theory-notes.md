@@ -1,7 +1,7 @@
 ---
 layout:    post
-title:     概率论笔记 1.3
-subtitle:  几何概率
+title:     几何概率
+subtitle:  概率论笔记 1.3
 keywords:  math,probability
 category:  probability theory
 tags:      [math,probability]

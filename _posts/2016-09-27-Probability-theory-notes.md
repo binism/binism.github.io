@@ -1,7 +1,7 @@
 ---
 layout:    post
-title:     概率论笔记 1.4
-subtitle:  统计概率
+title:     统计概率
+subtitle:  概率论笔记 1.4
 keywords:  math,probability
 category:  probability theory
 tags:      [math,probability]
