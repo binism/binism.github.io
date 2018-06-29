@@ -904,13 +904,56 @@ legend {
 	legend { font-size: 20px;}
 	.tab-content a{ font-size: 14px}
 	.badge { font-size: 10px }
-	.text-muted {color: #888;font-size: 14px;}
+	.text-muted {color: #bfbfbf;font-size: 14px;}
 }
 
-/* for anchorJs	 */
+/* for anchorJs */
 .anchorjs-link {
   transition: all .25s linear;
 }
 *:hover > .anchorjs-link {
   margin-left: -1.125em !important;
+}
+
+/* for emoj  */
+img.emoji {
+    display: inline-block;
+    margin: auto;
+}
+
+/* for pager previous&next */
+.post-container .pager li>a>span {
+    color: gray;
+    font-weight: 400;
+    letter-spacing: .5px;
+}
+.post-container .pager li {
+  width: 48%;
+}
+.post-container .pager li.next {
+  float: right;
+}
+.post-container .pager li.previous {
+  float: left;
+}
+.post-container .pager li > a {
+  width: 100%;
+}
+.post-container .pager li > a > span {
+  color: #808080;
+  font-weight: normal;
+  letter-spacing: 0.5px;
+}
+.pager li>a:hover>span, .pager li>a:focus>span {
+    color: #fff;
+}
+
+.post-container .pager li.home {
+  width: 30%;
+}
+.pager li>span.page_number {
+    width: 30%;
+}
+.pager li > a > span {
+    text-transform: capitalize;
 }

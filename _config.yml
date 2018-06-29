@@ -10,9 +10,13 @@ markdown: kramdown
 kramdown:
   input: GFM                       # use Github Flavored Markdown !important
 
-gems: [jekyll-paginate]   #jekyll 3.0.X
+gems: 
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jemoji
+  - jekyll-feed
 # 国内用多说
-disqus: binism
+# disqus: binism
 
 #Google Analytics https://developers.google.com/analytics/devguides/collection/analyticsjs/
 #去_layout/default.html的头文件中去设置.

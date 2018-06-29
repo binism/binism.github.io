@@ -5,9 +5,10 @@ layout: default
 <!-- Post Header -->
 <style type="text/css">
     header.intro-header{
-        background-image: url('{{ site.BASE_PATH }}{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}')
+        background-image: {% if page.header-img %} url('{{ site.BASE_PATH }}{{ page.header-img }}'){% endif %}{% if page.bg-color %} {{ page.bg-color }}{% endif %}
     }
 </style>
+
 <header class="intro-header" >
     <div class="container">
         <div class="row">
@@ -37,11 +38,11 @@ layout: default
                 col-lg-8 col-lg-offset-2
                 col-md-10 col-md-offset-1
                 post-container">
-
+				
     			{{ content }}
-
+				
 				<p class="text-right">
-				<a href="/"> {% if page.author %}{{ page.author }}{% else %}{{ site.author }}{% endif %}</a>
+				<a href="/">{{ page.author }}</a>
 				<span class="time">
 				/
 				<time>{{ page.date | date:"%Y-%m-%d" }}</time>
@@ -52,39 +53,39 @@ layout: default
 					<strong><em>Published under<a href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/">(CC) BY-NC-SA 3.0 CN</a>.
 					</em></strong>
 				</span>
-
-
-
+				
+					
+				
 				</p>
-
+	
 					<hr>
 					{% unless page.categories == empty %}
 					<ul class="tag_box list-unstyled list-inline">
 					<li><i class="fa fa-folder-open"></i></li>
 					{% assign categories_list = page.categories %}
 					{% if categories_list.first[0] == null %}
-						{% for category in categories_list %}
+						{% for category in categories_list %} 
 							<li><a href="{{ site.BASE_PATH }}/{{ site.categories_path }}#{{ category }}-ref">
 								{{ category | join: "/" }} <span>({{ site.categories[category].size }})</span>
 								{% unless forloop.last %},{% endunless %}
 							</a></li>
 						{% endfor %}
 					{% else %}
-						{% for category in categories_list %}
+						{% for category in categories_list %} 
 							<li><a href="{{ site.BASE_PATH }}/{{ site.categories_path }}#{{ category[0] }}-ref">
 								{{ category[0] | join: "/" }} <span>/{{ category[1].size }})</span>
 							</a></li>
 						{% endfor %}
 					{% endif %}
 					</ul>
-					{% endunless %}
-
+					{% endunless %}  
+			
 					{% unless page.tags == empty %}
 					<ul class="list-inline">
 					<li><i class="fa fa-tags"></i></li>
 					{% assign tags_list = page.tags %}
 					{% if tags_list.first[0] == null %}
-						{% for tag in tags_list %}
+						{% for tag in tags_list %} 
 							<li>
 								<a href="{{ site.BASE_PATH }}/{{ site.tags_path }}#{{ tag }}-ref">
 								{{ tag }} <span>({{ site.tags[tag].size }})</span>
@@ -93,22 +94,22 @@ layout: default
 							</li>
 						{% endfor %}
 					{% else %}
-						{% for tag in tags_list %}
+						{% for tag in tags_list %} 
 							<li>
 								<a href="{{ site.BASE_PATH }}/{{ site.tags_path }}#{{ tag[0] }}-ref">
 									{{ tag[0] }} <span>({{ tag[1].size }})</span>
 									{% unless forloop.last %},{% endunless %}
 								</a>
 							</li>
-
+						
 						{% endfor %}
 					{% endif %}
 					{% assign tags_list = nil %}
 					</ul>
-					{% endunless %}
-
+					{% endunless %}  
+			
 					<hr>
-
+			
 			{% if site.duoshuo_share && site.duoshuo_username %}
                 <!-- 多说 Share start -->
 				<div class="ds-share"
@@ -133,22 +134,21 @@ layout: default
                 <!-- 多说 Share end-->
                 {% endif %}
 
-
                 <ul class="pager">
-
-					{% if page.previous %}
-					<li class="previous"><a href="{{ site.BASE_PATH }}{{ page.previous.url }}" data-toggle="tooltip" data-placement="top" title="{{ page.previous.title }}">&larr; Previous</a></li>
-					{% else %}
-					<li class="previous disabled"><a>&larr; Previous</a></li>
-					{% endif %}
-					{% if page.next %}
-					<li class="next"><a href="{{ site.BASE_PATH }}{{ page.next.url }}" data-toggle="tooltip" data-placement="top" title="{{ page.next.title }}">Next &rarr;</a></li>
-					{% else %}
-						<li class="next disabled"><a>Next &rarr;</a>
-					{% endif %}
-
+                    {% if page.previous %}
+                    <li class="previous">
+                      <a href="{{ site.BASE_PATH }}{{ page.previous.url }}" data-toggle="tooltip" data-placement="top" title="{{ page.previous.title }}">&larr; Previous<br>
+                      <span>{{page.previous.title}}</span></a></li>
+                    {% else %}
+                    <li class="previous disabled"><a>&larr; Previous</a></li>
+                   {% endif %}
+                   {% if page.next %}
+                    <li class="next"><a href="{{ site.BASE_PATH }}{{ page.next.url }}" data-toggle="tooltip" data-placement="top" title="{{ page.next.title }}">Next &rarr;<br>
+                    <span>{{page.next.title}}</span></a></li>
+                    {% else %}
+                    <li class="next disabled"><a>Next &rarr;</a>
+                    {% endif %}
                 </ul>
-
 
                 {% if site.duoshuo_username %}
                 <!-- 多说评论框 start -->
@@ -163,7 +163,7 @@ layout: default
                 </div>
                 <!-- 多说评论框 end -->
                 {% endif %}
-
+				
                 {% if site.disqus %}
                 <!-- disqus 评论框 start -->
                 <div class="comment">
@@ -173,7 +173,6 @@ layout: default
                 {% endif %}
 
             </div>
-    </div>
 		<!-- Sidebar Container -->
             <div class="
                 col-lg-8 col-lg-offset-2
@@ -187,7 +186,7 @@ layout: default
                 <h5>友情链接</h5>
                 <ul class="list-inline">
                     {% for friend in site.friends %}
-                        <li><a href="{{friend.href}}">{{friend.title}}</a></li>
+                        <li><a href="{{friend.href}}" target="_blank">{{friend.title}}</a></li>
                     {% endfor %}
                 </ul>
                 {% endif %}
@@ -245,7 +244,7 @@ layout: default
 </script>
 <!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
 <script>
-    async("//cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js",function(){
+    async("http://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js",function(){
         anchors.options.placement = 'left';
         anchors.add('h2,h3');
 		anchors.remove('.subheading');
@@ -266,8 +265,4 @@ layout: default
 {% endif %}
 
 <!-- for R highlight -->
-<!--script type="text/javascript" src="{{ site.BASE_PATH }}/assets/js/r-highlight.js"></script-->
-
-<!--page views-->
-<script src="https://cdn1.lncld.net/static/js/av-mini-0.6.10.js"></script>
-<script src="http://jerry-cdn.b0.upaiyun.com/hit-kounter/hit-kounter-lc-0.2.0.js"></script>
+<script type="text/javascript" src="{{ site.BASE_PATH }}/assets/js/r-highlight.js"></script>
