@@ -1,79 +1,39 @@
-# visit https://github.com/mojombo/jekyll/wiki/Configuration for more settings
-title: BINISM
-SEOTitle: BINISM's Blog
-author: BINISM
-timezone: Asia/Shanghai
-paginate: 8 # pagination based on number of posts
-paginate_path: "page:num"
-highlighter: rouge
-markdown: kramdown
-kramdown:
-  input: GFM                       # use Github Flavored Markdown !important
+# ----------- CONFIGURABLE START -----------
+title:            "binism|jekyll blog|GitHub blog"
+description:      "搬磚碼農|欢迎来到 binism「角落」，一起分享。"
+url:              https://binism.github.io # 域名
+signoff:          "binism" # Your name
+facebook_appid:   #Wu Binbin
 
-gems: 
-  - jekyll-paginate
-  - jekyll-sitemap
-  - jemoji
-  - jekyll-feed
-# 国内用多说
-# disqus: binism
+google_analytics: UA-79772789-1
+share:            true 
+# 分页
+paginate: 15
+paginate_path: "binismpage:num"
+gems: [jekyll-paginate]
+links:
+  - name:         首页
+    url:          /
+    external:     false
+  - name:         书籍
+    url:          /book
+    external:     false
+  - name:         旅游
+    url:          /road
+    external:     false
+  - name:         归档
+    url:          /archives
+    external:     false
+  - name:         标签
+    url:          /tags
+    external:     false
+  - name:         关于
+    url:          /about
+    external:     false
+# ------------ CONFIGURABLE END ------------
 
-#Google Analytics https://developers.google.com/analytics/devguides/collection/analyticsjs/
-#去_layout/default.html的头文件中去设置.
-google_analytics_id: UA-79772789-1
-google_analytics_domain: auto
-
-# 自定义永久链接
-permalink: /blog/:year/:month/:day/:title/
-
-#默认底图
-header-img: /img/default-bg.jpg
-
-RSS: feed.xml
-categories_path: categories
-tags_path: tags
-archive_path: archives
-about_path: about.html
-
-BASE_PATH:
-
-
-# SNS settings
-
-weibo_username:     BINISMWU
-facebook_username:     binismwu
-github_username:    binism
-google_username:  binismwu
-RSS: feed.xml
-email: binismwu@gmail.com
-
-
-anchorjs: true                          # 修改在default.html->footer
-
-
-# 评论系统
-# Duoshuo settings
-duoshuo_username: binism
-# Share component is depend on Comment so we can NOT use share only.
-duoshuo_share: true                     # set to false if you want to use Comment without Sharing
-url: "http://binism.github.io"
-
-# page Sidebar settings
-sidebar-about-description: "啊。"
-sidebar-avatar: /img/me1.png     # img前面加`/`绝对引用。
-
-
-
-# Friends
-friends: [
-	{
-        title: "binism",
-        href: "http://binism.github.io"
-	},{
-        title: "brucezhaor-BLOG MODEL",
-        href: "http://brucezhaor.github.io/"
-	},{
-        title: "MrWhoami",
-        href: "http://MrWhoami.github.io"
-	}
-]
+#permalink:        /:categories/:title.html
+permalink: /:year/:month/:day/:title.html
+defaults:
+  - values:
+      layout: "default"

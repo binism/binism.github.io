@@ -1,35 +1,67 @@
-## BINISM's Personal Blog
-see [BINISM' blog](https://binism.github.io/).
+                .::         .::                       .::      .::                 
+                .::       .:.::                        .::   .::                    
+                .::         .::         .::    .: .:::  .:: .::   .::  .::   .::    
+                .::      .::.:: .::   .:   .::  .::       .::     .::  .:: .:   .:: 
+                .::      .::.::   .::.::::: .:: .::     .:: .::   .::  .::.::::: .::
+                .::      .::.::   .::.:         .::    .::   .::  .::  .::.:        
+                .::::::::.::.:: .::    .::::   .:::   .::      .::  .::.::  .::::   
+                          Copyright (c) 2016-2018 liberxue
+                                 http://www.liberxue.com
+                           
+#### liberxue.github.io preview (demo) (http://www.liberxue.com)
 
-### Hello World!
+`Jekyll Themes`
+----------
+[中文版帮助文档README](/ChinaREADME.md)
+## `Lightweight`  `Minimalist`  `Jekyll blog`
 
-This is my first Blog on [GitHub](https://github.com), powered by [Jekyll](https://github.com/mojombo/jekyll) and [Jekyll-bootstrap](http://jekyllbootstrap.com), licensed under [(CC) BY-NC-SA 3.0 CN](http://creativecommons.org/licenses/by-nc-sa/3.0/cn) Theme From:[dbyll](http://dbtek.github.io/dbyll/) & [Hux](http://huangxuan.me) .
+### The first step is to click [fork][https://github.com/liberxue/liberxue.github.io/fork]
+### The second step is to modify the _config.yml in URL for your domain name
 
-### BLOG Model
-This Blog Model Theme is from [Bruce Zhao](https://github.com/BruceZhaoR/brucezhaor.github.io).
+### OK all right, it's that simple
+
+#### I don't want any copyright also don't need you to donate, I only need you with a star 🌟  Thx 😄
+
+- [x] Automatic generation tag
+- [x] Automatic generation of JSON search
+- [x] Adaptive template
+- [x] Automatic generation of feed.xml
+- [x] Automatic paging generation
+- [x] Modify _config.yml's links for your menu
+- [x] Modify the _config.yml of paginate for how many pages you want to page
+
+![uiliberxue](https://raw.githubusercontent.com/Liberxue/liberxue.github.io/master/thumbnails/ui.jpg) 
+
+ ![archives](https://raw.githubusercontent.com/Liberxue/liberxue.github.io/master/thumbnails/archives.png) 
+
+ ![blog](https://raw.githubusercontent.com/Liberxue/liberxue.github.io/master/thumbnails/blog.png) 
+
+ ![tags](https://raw.githubusercontent.com/Liberxue/liberxue.github.io/master/thumbnails/tags.png) 
+
+  ![404](https://raw.githubusercontent.com/Liberxue/liberxue.github.io/master/thumbnails/404.png) 
+
+ ----------
+![blog JSON search](https://raw.githubusercontent.com/Liberxue/liberxue.github.io/master/thumbnails/01.gif) 
+
+### 1.First step Click[fork](https://github.com/Liberxue/liberxue.github.io#fork-destination-box)
+ 
+----
+
+![fork](https://raw.githubusercontent.com/Liberxue/liberxue.github.io/master/thumbnails/02.gif)
+  
+  
+
+
+### 2. modify _config.yml url URL for your domain
+
+![modify _config.yml url URL for your domain](https://raw.githubusercontent.com/Liberxue/liberxue.github.io/master/thumbnails/04.gif)
+  
 
 
 
+* [Issues](https://github.com/Liberxue/liberxue.github.io/issues)
+ 
+* [Email](mailto:liberxue@gmail.com)
+ 
+* [Twitter](https://twitter.com/liberxue).
 
---------------
-Following Changes is made by [BruceZhao](https://github.com/BruceZhaoR).
-2016-01-08
-
-改自Hux的博客
-- [x] 增加 tags,archives,categories等页面
-- [x] 页面布局小修改
-- [x] 代码高亮配色方案（RStudio&Jekyll)
-- [x] 多说分享链接修复
-- [ ] 文章页面侧边导航栏
-- [x] 多说分享图片设置
-- [x] change perimalink
-- [x] add back to top.
-- [ ] header.image  note:`background-color: #155799; background-image: linear-gradient(110deg, #155799, #159978);`
-- [ ] r-highlight  add keyword & fix string highlight.
-
-------------
-Following Changes is made by [binism](https://github.com/binism).
-2016-06-29
-
-- [x] 添加搜索功能 -- 根据EZLippi的[Blog](http://EZLippi.github.io)
-- [x] 增加search.html以及include/search.html.
