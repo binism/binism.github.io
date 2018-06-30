@@ -17,7 +17,7 @@ gems:
   - jekyll-feed
 
 # 国内用多说
-# disqus: binismr
+ disqus: binismwu
 
 #Google Analytics https://developers.google.com/analytics/devguides/collection/analyticsjs/
 #去_layout/default.html的头文件中去设置.
@@ -28,7 +28,7 @@ gems:
 permalink: /blog/:year/:month/:day/:title/
 
 #默认底图
-header-img: /img/default-bg.jpg
+header-img: /img/default-bg.png
 
 RSS: feed.xml
 categories_path: categories
@@ -42,12 +42,12 @@ BASE_PATH:
 # SNS settings
 
 weibo_username:     binism
-facebook_username:     wubinbin
+facebook_username:     bisnismwu
 github_username:    binism
 google_username:  100486110228189876821/posts
 RSS: feed.xml
-email: binism@gmail.com
-linkedin: binism
+email: binismwu@gmail.com
+linkedin: binismwu
 
 anchorjs: true                          # 修改在default.html->footer
 
