@@ -128,12 +128,12 @@ s可以写o，当且仅当$$ l_s < l_o $$。且s对o具有自主型写权限。
 | C | $$ \{C_1,C_2, ....,C_q\} C_1 > C_2 >  ....  > C_q $$ 级别：主体的安全许可，客体的敏感级别。 |
 | K | $$ \{K_1,K_2, ....,K_r\} $$ | 类别：访问权限范围。 |
 | A | $$ \{r,w,e,a,c\} $$ | 访问属性:read, write, append, execute, control |
-| RA | $$ \{g,r,c,d\} $$ | 请求元素： g:  get, giver:  release, rescindc:  change, created:  delete |
+| RA | $$ \{g,r,c,d\} $$ | 请求元素：g:  get, giver:  release, rescindc:  change, created:  delete |
 | R | $$ S^+ × RA × S^+ × O × X  其中： S^+ = S ∪ \{f\}, X = A  ∪  \{f\} ∪  F; 一个请求的元素记为 R_k $$ | 请求：inputs, commands, requests for access to objects by subjects |
 | D | $$ \{yes, no, error, ?\}D的元素记为D_m $$ | 决定 |
-| F | $$ C^S × C^O × (PK)^S × (PK)^O $$ an arbitrary element of F is written $$ f = (f_1,f_2,f_3,f_4) $$ | classification/need-to-know vectors;f1: subject-classification functionf2: object-classification functionf3: subject-category functionf4: object-category function |
-| X | $$ R^T $$ an arbitrary element of  X  is written  x. | request sequences |
+| F | $$ C^S × C^O × (PK)^S × (PK)^O$$ an arbitrary element of F is written $$ f = (f_1,f_2,f_3,f_4) $$ | classification/need-to-know vectors;f1: subject-classification functionf2: object-classification functionf3: subject-category functionf4: object-category function |
+| X | $$ R^T$$ an arbitrary element of  X  is written  x. | request sequences |
 | Y | $$ D^T $$ an arbitrary element of  Y  is written  y. | decision sequences |
-| M | $$ \{M_1,M_2, .... , M_c\},c = {(2^5)}^{n·m} $$; an element of M, say M_k,  is an n   × m  matrix with entries from PA; the $$ (i,j)‑entry $$ of $$ M_k $$shows $$ S_i $$'s access attributes relative to $$ 0_j $$ | access matrices |
+| M | $$ \{M_1,M_2, .... , M_c\},c = {(2^5)}^{n·m} $$;an element of M, say M_k,  is an n   × m  matrix with entries from PA; the $$ (i,j)‑entry $$ of $$ M_k $$shows $$ S_i $$'s access attributes relative to $$ 0_j $$ | access matrices |
 | V | $$ P(S × O × A) × M × F $$ an arbitrary element of V is written v. | states |
 | $$ Z=V^T $$ | $$ T = \{1,2,…, n\}, V_T=\{(v_1, …, v_n ) \| ∀i∈T, v_i∈V \} $$, An arbitrary element of  $$ V_T $$ is written  z, which is  a state sequence ; The components of a state sequence z are$$ v_t $$, $$ t=1,2,…, n $$, and they are also denoted as $$ z_t $$  ,which is the t-th state in the state sequence, $$ t=1,2,…, n $$。 | state sequences |

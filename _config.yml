@@ -1,39 +1,74 @@
-# ----------- CONFIGURABLE START -----------
-title:            "binism|jekyll blog|GitHub blog"
-description:      "搬磚碼農|欢迎来到 binism「角落」，一起分享。"
-url:              https://binism.github.io # 域名
-signoff:          "binism" # Your name
-facebook_appid:   #Wu Binbin
+# visit https://github.com/mojombo/jekyll/wiki/Configuration for more settings
+title: BINISM
+SEOTitle: binism's Blog
+author: binismwu
+timezone: Asia/Shanghai
+paginate: 8 # pagination based on number of posts
+paginate_path: "page:num"
+highlighter: rouge
+markdown: kramdown
+kramdown:
+  input: GFM                       # use Github Flavored Markdown !important
 
-google_analytics: UA-79772789-1
-share:            true 
-# 分页
-paginate: 15
-paginate_path: "binismpage:num"
-gems: [jekyll-paginate]
-links:
-  - name:         首页
-    url:          /
-    external:     false
-  - name:         书籍
-    url:          /book
-    external:     false
-  - name:         旅游
-    url:          /road
-    external:     false
-  - name:         归档
-    url:          /archives
-    external:     false
-  - name:         标签
-    url:          /tags
-    external:     false
-  - name:         关于
-    url:          /about
-    external:     false
-# ------------ CONFIGURABLE END ------------
+gems:
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jemoji
+  - jekyll-feed
 
-#permalink:        /:categories/:title.html
-permalink: /:year/:month/:day/:title.html
-defaults:
-  - values:
-      layout: "default"
+# 国内用多说
+# disqus: binismr
+
+#Google Analytics https://developers.google.com/analytics/devguides/collection/analyticsjs/
+#去_layout/default.html的头文件中去设置.
+#google_analytics_id: UA-72808482-1
+#google_analytics_domain: auto
+
+# 自定义永久链接
+permalink: /blog/:year/:month/:day/:title/
+
+#默认底图
+header-img: /img/default-bg.jpg
+
+RSS: feed.xml
+categories_path: categories
+tags_path: tags
+archive_path: archives
+about_path: about
+
+BASE_PATH:
+
+
+# SNS settings
+
+weibo_username:     binism
+facebook_username:     wubinbin
+github_username:    binism
+google_username:  100486110228189876821/posts
+RSS: feed.xml
+email: binism@gmail.com
+linkedin: binism
+
+anchorjs: true                          # 修改在default.html->footer
+
+
+# 评论系统
+# Duoshuo settings
+duoshuo_username: binism
+# Share component is depend on Comment so we can NOT use share only.
+duoshuo_share: true                     # set to false if you want to use Comment without Sharing
+url: "http://binism.github.io"
+
+# page Sidebar settings
+sidebar-about-description: "程序員"
+sidebar-avatar: /img/me1.png     # img前面加`/`绝对引用。
+
+
+
+# Friends
+friends: [
+	{
+        title: "javaWorld",
+        href: "https://www.javaworld.com/"
+  }
+]
