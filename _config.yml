@@ -17,7 +17,7 @@ gems:
   - jekyll-feed
 
 # 国内用多说
-disqus: disqus_Vjm5IeRQt0
+disqus: https-binism-github-io
 
 #Google Analytics https://developers.google.com/analytics/devguides/collection/analyticsjs/
 #去_layout/default.html的头文件中去设置.
