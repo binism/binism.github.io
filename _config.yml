@@ -17,7 +17,13 @@ gems:
   - jekyll-feed
 
 # 国内用多说
-disqus: https-binism-github-io
+disqus: true
+
+# Disqus settings
+disqus_shortname: https-binism-github-io
+
+# Netease setttings
+netease_comment: true
 
 #Google Analytics https://developers.google.com/analytics/devguides/collection/analyticsjs/
 #去_layout/default.html的头文件中去设置.
@@ -51,13 +57,6 @@ linkedin: binismwu
 
 anchorjs: true                          # 修改在default.html->footer
 
-
-# 评论系统
-# Duoshuo settings
-duoshuo_username: binism
-# Share component is depend on Comment so we can NOT use share only.
-duoshuo_share: true                     # set to false if you want to use Comment without Sharing
-url: "http://binism.github.io"
 
 # page Sidebar settings
 sidebar-about-description: "程序員"
