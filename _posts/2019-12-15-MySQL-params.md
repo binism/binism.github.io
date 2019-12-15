@@ -8,14 +8,18 @@ author:     "BINISM"
 tags:		[MySQL]
 ---
 
+* derived from 施瓦茨(Baron Schwartz); 扎伊采夫(Peter Zaitsev); 特卡琴科(Vadim Tkachenko). 《高性能MySQL(第3版)》 电子工业出版社.
+
+---
+
 ## 目录
 {: .no_toc}
-----
+
 * 目录
 {:toc}
+
 ---
-* derived from 施瓦茨(Baron Schwartz); 扎伊采夫(Peter Zaitsev); 特卡琴科(Vadim Tkachenko). 《高性能MySQL(第3版)》 电子工业出版社. 
----
+
 
 ##　优化MySQL服务器设置
 在本文中，我们将解释如何为MySQL服务器创建一个靠谱的配置文件的过程。这是一个很绕的过程，有很多有意思的关注点和值得关注的思路。关注这些点很有必要，因为创建一个好配置的最快方法不是从学习配置项开始，也不是从问哪个配置项应该怎么设置或者怎么修改开始，更不是从检查服务器行为和询问哪个配置项可以提升性能开始。最好是从理解MySQL内核和行为开始。然后可以利用这些知识来指导配置MySQL。最后，可以将想要的配置和当前配置进行比较，然后纠正重要并且有价值的不同之处。
